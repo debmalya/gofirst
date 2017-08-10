@@ -1,10 +1,17 @@
 package main
 
-import "fmt"
+
+import (
+  "bufio"
+  "os"
+  "fmt"
+)
 
 func main() {
     fmt.Printf("What's your name?");
-    var name string
-    fmt.Scanf("%s",&name)
+    scanner := bufio.NewScanner(os.Stdin)
+    scanner.Scan() // use `for scanner.Scan()` to keep reading
+    name := scanner.Text()
     fmt.Printf("hello "+ name)
+    fmt.Printf("\n")
 }
